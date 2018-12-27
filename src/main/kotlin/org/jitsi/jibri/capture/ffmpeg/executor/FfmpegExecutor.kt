@@ -36,9 +36,9 @@ const val FFMPEG_RESTART_ATTEMPTS = 1
  * Parameters which will be passed to ffmpeg
  */
 data class FfmpegExecutorParams(
-    val resolution: String = "1280x720",
-    val framerate: Int = 30,
-    val videoEncodePreset: String = "veryfast",
+    val resolution: String = "1024x768",
+    val framerate: Int = 25,
+    val videoEncodePreset: String = "ultrafast",
     val queueSize: Int = 4096,
     val streamingMaxBitrate: Int = 2976,
     val streamingBufSize: Int = streamingMaxBitrate * 2,
@@ -49,7 +49,7 @@ data class FfmpegExecutorParams(
     // it should look the same or nearly the same as the input but it
     // isn't technically lossless.
     // https://trac.ffmpeg.org/wiki/Encode/H.264#crf
-    val h264ConstantRateFactor: Int = 25,
+    val h264ConstantRateFactor: Int = 23,
     val gopSize: Int = framerate * 2
 )
 
