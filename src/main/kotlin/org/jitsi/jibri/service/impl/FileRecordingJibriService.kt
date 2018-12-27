@@ -128,7 +128,7 @@ class FileRecordingJibriService(
      * be nested within [FileRecordingParams.recordingDirectory].
      */
     private val sessionRecordingDirectory =
-        fileRecordingParams.recordingDirectory.resolve(fileRecordingParams.sessionId)
+        fileRecordingParams.recordingDirectory.resolve(fileRecordingParams.callParams.callUrlInfo.callName)
 
     init {
         logger.info("Writing recording to $sessionRecordingDirectory")
