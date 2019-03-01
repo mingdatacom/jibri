@@ -35,7 +35,7 @@ fun getFfmpegCommandLinux(ffmpegExecutorParams: FfmpegExecutorParams, sink: Sink
         *sink.options, "-pix_fmt", "yuv420p", "-r", ffmpegExecutorParams.framerate.toString(),
         "-crf", ffmpegExecutorParams.h264ConstantRateFactor.toString(),
         "-g", ffmpegExecutorParams.gopSize.toString(), "-tune", "zerolatency",
-        "-f", sink.format, sink.path
+        "-f", sink.format, "-t", "00:30:00", sink.path
     )
 }
 
